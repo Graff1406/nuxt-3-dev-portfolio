@@ -38,10 +38,7 @@ const brandLogos: string[] = [
       <div class="h-[calc(100vh-82px)] flex items-center justify-center">
         <div class="flex flex-col space-y-14 items-center">
           <p class="text-6xl font-bold uppercase leading-tight flex flex-col">
-            <span
-              class="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent"
-              >Product-Driven</span
-            >
+            <span class="text-gradient">Product-Driven</span>
             <span
               class="bg-gradient-to-r from-zinc-900 to-zinc-500 bg-clip-text text-transparent"
               >Web Developer</span
@@ -71,21 +68,14 @@ const brandLogos: string[] = [
 
       <UIDivider />
 
-      <div>
-        <ClientOnly>
-          <BlockBrandLogs />
-        </ClientOnly>
-      </div>
-
-      <div class="space-y-12">
-        <BlockFeatureList />
-      </div>
+      <ClientOnly>
+        <BlockBrandLogs />
+      </ClientOnly>
 
       <UIDivider />
 
-      <div class="space-y-12 w-full flex">
-        <BlockChatAI />
-      </div>
+      <BlockFeatureList />
     </div>
+    <BlockChatAI />
   </div>
 </template>

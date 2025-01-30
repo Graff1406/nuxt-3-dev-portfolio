@@ -44,12 +44,16 @@ const featureCards: {
 </script>
 
 <template>
-  <div v-for="card in featureCards" :key="card.title">
-    <UIDivider />
+  <div v-for="(card, index) in featureCards" :key="card.title">
+    <UIDivider v-if="index > 0" />
 
-    <div class="flex-1 flex justify-between">
-      <div class="flex-1 py-4 px-6 flex flex-col justify-center space-y-7">
-        <h3 class="text-4xl font-bold text-center">{{ card.title }}</h3>
+    <div class="flex-1 flex space-x-4 justify-between">
+      <div class="flex-1 flex flex-col justify-center space-y-7">
+        <h3
+          class="text-4xl font-bold text-center bg-gradient-to-r from-zinc-900 to-zinc-600 bg-clip-text text-transparent"
+        >
+          {{ card.title }}
+        </h3>
         <p class="text-xl">
           {{ card.description }}
         </p>
@@ -63,7 +67,11 @@ const featureCards: {
         </div>
       </div>
       <div>
-        <Icon :name="card.icon" size="23em" style="color: #3f3f46" />
+        <Icon
+          :name="card.icon"
+          size="23em"
+          class="bg-gradient-to-r from-pink-950 to-blue-950"
+        />
       </div>
     </div>
   </div>

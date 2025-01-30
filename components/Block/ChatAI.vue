@@ -35,20 +35,24 @@ const sendMessage = () => {
 </script>
 
 <template>
-  <div class="border border-zinc-800 rounded-xl w-full flex">
+  <div class="border border-zinc-800 rounded-xl w-full flex overflow-hidden">
     <div
-      v-if="messages.length === 0"
-      class="basis-1/3 text-center space-y-4 flex flex-col justify-center bg-zinc-800 text-white rounded-l-xl p-4"
+      class="text-center space-y-4 flex flex-col justify-center text-white rounded-l-xl bg-gradient-to-b from-zinc-950 to-zinc-700 transition-all duration-300"
+      :class="
+        messages.length > 0 ? 'whitespace-nowrap max-w-0 p-0' : 'max-w-80 p-4'
+      "
     >
-      <!-- <span>
-        <Icon name="fluent:bot-sparkle-28-regular" size="8em" />
-      </span> -->
-
       <h3 class="text-4xl font-bold">My Alter Ego AI</h3>
       <p class="text-xl">
-        You can ask me anything about me as web developer and all technologies
-        around!
+        You can ask me anything in the chat about me as web developer and all
+        technologies around!
       </p>
+      <div class="flex items-center">
+        <UIDivider />
+        <p class="mx-2 font-bold uppercase text-sm">Contacts</p>
+        <UIDivider />
+      </div>
+      <SocialContact class="justify-evenly" />
     </div>
     <div class="flex-1 space-y-4 rounded-xl p-4">
       <div
@@ -69,7 +73,12 @@ const sendMessage = () => {
               "
               size="1.5em"
             />
-            <span>
+            <span
+              :class="[
+                message.role === 'user' ? 'bg-blue-100' : 'bg-green-100',
+                'px-2 py-1 rounded-xl',
+              ]"
+            >
               {{ message.content }}
             </span>
           </li>
