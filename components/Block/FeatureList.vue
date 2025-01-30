@@ -44,27 +44,27 @@ const featureCards: {
 </script>
 
 <template>
-  <div
-    v-for="card in featureCards"
-    :key="card.title"
-    class="flex-1 flex justify-between border-t border-black pt-14"
-  >
-    <div class="flex-1 py-4 px-6 flex flex-col justify-center space-y-7">
-      <h3 class="text-4xl font-bold text-center">{{ card.title }}</h3>
-      <p class="text-xl">
-        {{ card.description }}
-      </p>
-      <div class="flex justify-center">
-        <NuxtLink :to="card.link">
-          <UIButton invert>
-            <Icon name="material-symbols:arrow-forward-ios" />
-            <span> See More </span>
-          </UIButton>
-        </NuxtLink>
+  <div v-for="card in featureCards" :key="card.title">
+    <UIDivider />
+
+    <div class="flex-1 flex justify-between">
+      <div class="flex-1 py-4 px-6 flex flex-col justify-center space-y-7">
+        <h3 class="text-4xl font-bold text-center">{{ card.title }}</h3>
+        <p class="text-xl">
+          {{ card.description }}
+        </p>
+        <div class="flex justify-center">
+          <NuxtLink :to="card.link">
+            <UIButton invert>
+              <Icon name="material-symbols:arrow-forward-ios" />
+              <span> See More </span>
+            </UIButton>
+          </NuxtLink>
+        </div>
       </div>
-    </div>
-    <div>
-      <Icon :name="card.icon" size="23em" style="color: #3f3f46" />
+      <div>
+        <Icon :name="card.icon" size="23em" style="color: #3f3f46" />
+      </div>
     </div>
   </div>
 </template>

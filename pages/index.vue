@@ -69,7 +69,7 @@ const brandLogos: string[] = [
         </div>
       </div>
 
-      <!-- Brand logos -->
+      <UIDivider />
 
       <div>
         <ClientOnly>
@@ -77,15 +77,13 @@ const brandLogos: string[] = [
         </ClientOnly>
       </div>
 
-      <!-- Features -->
-
       <div class="space-y-12">
         <BlockFeatureList />
       </div>
 
-      <!-- Chat AI -->
+      <UIDivider />
 
-      <div class="border-t border-black py-16 space-y-12 w-full flex">
+      <div class="space-y-12 w-full flex">
         <BlockChatAI />
       </div>
     </div>

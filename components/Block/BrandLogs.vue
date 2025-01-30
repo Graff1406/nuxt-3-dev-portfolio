@@ -42,7 +42,7 @@ const brands: string[] = [
 </script>
 
 <template>
-  <ul class="flex flex-wrap items-center text-xl gap-4 my-12">
+  <ul class="flex flex-wrap items-center text-xl gap-4">
     <li v-for="brand in brands" :key="brand">
       <Icon :name="brand" size="3em" />
     </li>

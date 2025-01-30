@@ -5,7 +5,9 @@ const currentYear = new Date().getFullYear();
 <template>
   <div class="flex justify-center h-full">
     <div class="flex flex-col justify-between w-[70%] min-h-screen h-full">
-      <header class="flex justify-between items-center border-b w-full py-4">
+      <header
+        class="flex justify-between items-center border-b border-zinc-400 w-full py-4"
+      >
         <div class="flex space-x-4">
           <Icon name="skill-icons:htmx-dark" size="3em" />
 
