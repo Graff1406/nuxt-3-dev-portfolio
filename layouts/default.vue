@@ -12,10 +12,10 @@ const currentYear = new Date().getFullYear();
           <span class="text-4xl font-bold uppercase">Avtandil</span>
         </div>
         <div>
-          <TheButton>
+          <UIButton>
             <Icon name="material-symbols:download" size="2em" />
             <span> Download CV </span>
-          </TheButton>
+          </UIButton>
         </div>
       </header>
       <main class="flex-1 h-full">

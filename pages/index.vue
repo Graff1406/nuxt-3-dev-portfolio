@@ -37,20 +37,30 @@ const brandLogos: string[] = [
       <!-- Start -->
       <div class="h-[calc(100vh-82px)] flex items-center justify-center">
         <div class="flex flex-col space-y-14 items-center">
-          <p class="text-6xl font-bold uppercase">Full Stack Web Developer</p>
+          <p class="text-6xl font-bold uppercase leading-tight flex flex-col">
+            <span
+              class="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent"
+              >Product-Driven</span
+            >
+            <span
+              class="bg-gradient-to-r from-zinc-900 to-zinc-500 bg-clip-text text-transparent"
+              >Web Developer</span
+            >
+          </p>
           <p class="text-2xl">
-            I am a full-stack web developer with 5 years of experience. I have a
-            passion for web development and love to create for web and mobile
-            devices. Experienced Web Developer with expertise in advanced web
-            development across all stages. Skilled in user interface design,
-            testing, and debugging, ensuring high-quality, efficient web
+            I am a full-stack web developer with 5 years of experience, focused
+            on building high-performance, secure, and user-centric digital
+            products. Passionate about creating seamless web and mobile
+            experiences that drive engagement and business growth. Skilled in
+            UI/UX design, performance optimization, security best practices,
+            SEO, and debugging to deliver scalable, efficient, and resilient web
             solutions.
           </p>
           <div class="flex items-center gap-6">
-            <TheButton invert>
+            <UIButton invert>
               <Icon name="material-symbols:download" size="2em" />
               <span> Download CV </span>
-            </TheButton>
+            </UIButton>
 
             <div>
               <SocialContact />
@@ -62,19 +72,21 @@ const brandLogos: string[] = [
       <!-- Brand logos -->
 
       <div>
-        <BrandLogs />
+        <ClientOnly>
+          <BlockBrandLogs />
+        </ClientOnly>
       </div>
 
       <!-- Features -->
 
       <div class="space-y-12">
-        <FeatureList />
+        <BlockFeatureList />
       </div>
 
       <!-- Chat AI -->
 
       <div class="border-t border-black py-16 space-y-12 w-full flex">
-        <ChatAIOld />
+        <BlockChatAI />
       </div>
     </div>
   </div>

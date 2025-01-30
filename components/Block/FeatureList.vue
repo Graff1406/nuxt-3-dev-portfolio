@@ -56,10 +56,10 @@ const featureCards: {
       </p>
       <div class="flex justify-center">
         <NuxtLink :to="card.link">
-          <TheButton invert>
+          <UIButton invert>
             <Icon name="material-symbols:arrow-forward-ios" />
             <span> See More </span>
-          </TheButton>
+          </UIButton>
         </NuxtLink>
       </div>
     </div>

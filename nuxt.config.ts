@@ -4,7 +4,9 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     '@nuxtjs/tailwindcss'
   ],
+
   css: ['~/assets/css/main.css', '~/assets/css/google-fonts.css'],
+
   icon: {
     customCollections: [
       {
@@ -13,4 +15,6 @@ export default defineNuxtConfig({
       },
     ],
   },
+
+  compatibilityDate: '2025-01-29',
 })
