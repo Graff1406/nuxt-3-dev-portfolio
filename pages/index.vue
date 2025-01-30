@@ -1,28 +1,33 @@
 <script setup lang="ts">
-const featureCards: {
-  title: string;
-  description: string;
-  icon: string;
-  link: string;
-}[] = [
-  {
-    title: "Components",
-    description: "I am a full-stack web developer with 5 years of experience.",
-    icon: "tdesign:component-grid-filled",
-    link: "/",
-  },
-  {
-    title: "Widgets",
-    description: "I am a full-stack web developer with 5 years of experience.",
-    icon: "tdesign:component-layout-filled",
-    link: "/",
-  },
-  {
-    title: "Clone sites",
-    description: "I am a full-stack web developer with 5 years of experience.",
-    icon: "material-symbols:content-copy-sharp",
-    link: "/",
-  },
+const brandLogos: string[] = [
+  "skill-icons:javascript",
+  "skill-icons:html",
+  "skill-icons:css",
+  "skill-icons:vuejs-light",
+  "skill-icons:nuxtjs-light",
+  "skill-icons:pinia-light",
+  "skill-icons:vuetify-light",
+  "skill-icons:react-light",
+  "skill-icons:redux",
+  "logos:jira",
+  "skill-icons:nodejs-light",
+  "vscode-icons:file-type-firestore",
+  "skill-icons:graphql-light",
+  "vscode-icons:file-type-angular",
+  "skill-icons:tailwindcss-light",
+  "skill-icons:materialui-light",
+  "skill-icons:expressjs-light",
+  "skill-icons:netlify-light",
+  "skill-icons:figma-light",
+  "skill-icons:jest",
+  "skill-icons:linux-light",
+  "skill-icons:windows-light",
+  "skill-icons:git",
+  "skill-icons:notion-light",
+  "skill-icons:typescript",
+  "skill-icons:vscode-light",
+  "skill-icons:vite-light",
+  "skill-icons:webpack-light",
 ];
 </script>
 
@@ -54,159 +59,22 @@ const featureCards: {
         </div>
       </div>
 
-      <!-- Tach -->
+      <!-- Brand logos -->
 
       <div>
-        <ul class="flex items-center text-xl">
-          <li>
-            <Icon name="vscode-icons:file-type-js-official" size="3em" />
-          </li>
-          <li>
-            <Icon name="logos:html-5" size="3em" />
-          </li>
-          <li>
-            <Icon name="devicon:css3-wordmark" size="3em" />
-          </li>
-          <li>
-            <Icon name="devicon:vuejs" size="3em" />
-          </li>
-          <li>
-            <Icon name="devicon:nuxtjs" size="3em" />
-          </li>
-          <li class="text-green-500">
-            <Icon name="logos:vuetifyjs" size="3em" />
-          </li>
-          <li>
-            <Icon name="vscode-icons:file-type-reactjs" size="3em" />
-          </li>
-          <li>
-            <Icon name="catppuccin:package-json" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:expressjs-light" size="3em" />
-          </li>
-          <li>
-            <Icon name="devicon:angularjs" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:tailwindcss-light" size="3em" />
-          </li>
-          <li>
-            <Icon name="vscode-icons:file-type-firestore" size="3em" />
-          </li>
-          <li>
-            <Icon name="devicon-plain:mongodb-wordmark" size="3em" />
-          </li>
-          <li>
-            <Icon name="logos:graphql" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:materialui-light" size="3em" />
-          </li>
-          <li>
-            <Icon name="devicon:jiraalign" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:netlify-light" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:figma-light" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:git" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:jest" size="3em" />
-          </li>
-          <li>
-            <Icon name="skill-icons:linux-light" size="3em" />
-          </li>
-        </ul>
+        <BrandLogs />
       </div>
 
       <!-- Features -->
 
       <div class="space-y-12">
-        <div
-          v-for="card in featureCards"
-          :key="card.title"
-          class="flex-1 flex justify-between border-t border-black pt-14"
-        >
-          <div class="flex-1 py-4 px-6 flex flex-col justify-center space-y-6">
-            <h3 class="text-4xl font-bold text-center">{{ card.title }}</h3>
-            <p class="text-xl">
-              {{ card.description }}
-            </p>
-            <div class="flex justify-center">
-              <NuxtLink :to="card.link">
-                <TheButton invert>
-                  <Icon name="material-symbols:arrow-forward-ios" />
-                  <span> See More </span>
-                </TheButton>
-              </NuxtLink>
-            </div>
-          </div>
-          <div>
-            <Icon :name="card.icon" size="23em" style="color: #27272a" />
-          </div>
-        </div>
+        <FeatureList />
       </div>
-    </div>
 
-    <!-- Chat AI -->
+      <!-- Chat AI -->
 
-    <div class="border border-black rounded-xl w-full flex">
-      <div
-        class="basis-1/3 text-center space-y-4 flex flex-col justify-center bg-black text-white rounded-l-xl p-4"
-      >
-        <h3 class="text-4xl font-bold">My Alter Ego AI</h3>
-        <p class="text-xl">
-          You can ask me anything about me as web developer and all technologies
-          around!
-        </p>
-      </div>
-      <div class="flex-1 space-y-4 rounded-xl p-4">
-        <div class="h-80 custom-scrollbar rounded-xl overflow-y-auto space-y-4">
-          <p>
-            teYou can ask me anything about me as web developer and all
-            technologies around!st
-          </p>
-          <p>
-            You can ask me anything about me as web developer and all
-            technologies around!
-          </p>
-          <p>
-            teYou can ask me anything about me as web developer and all
-            technologies around!st
-          </p>
-          <p>
-            You can ask me anything about me as web developer and all
-            technologies around!
-          </p>
-          <p>
-            teYou can ask me anything about me as web developer and all
-            technologies around!st
-          </p>
-          <p>
-            You can ask me anything about me as web developer and all
-            technologies around!
-          </p>
-          <p>
-            teYou can ask me anything about me as web developer and all
-            technologies around!st
-          </p>
-          <p>
-            You can ask me anything about me as web developer and all
-            technologies around!
-          </p>
-        </div>
-        <div>
-          <input
-            placeholder="Ask me anything..."
-            type="text"
-            class="rounded-xl w-full p-4 text-xl border"
-          />
-        </div>
+      <div class="border-t border-black py-16 space-y-12 w-full flex">
+        <ChatAIOld />
       </div>
     </div>
   </div>

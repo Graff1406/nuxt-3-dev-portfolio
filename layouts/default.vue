@@ -24,7 +24,7 @@ const currentYear = new Date().getFullYear();
       <footer
         class="flex justify-between items-center bg-black text-white rounded-t-xl w-full py-4 px-6"
       >
-        <p class="text-xl">© {{ currentYear }} Web Developer</p>
+        <p class="text-xl">© 2018 - {{ currentYear }} Web Developer</p>
         <SocialContact />
       </footer>
     </div>

@@ -5,4 +5,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   css: ['~/assets/css/main.css', '~/assets/css/google-fonts.css'],
+  icon: {
+    customCollections: [
+      {
+        prefix: 'app-icon',
+        dir: './assets/icons'
+      },
+    ],
+  },
 })
