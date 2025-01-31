@@ -41,7 +41,7 @@
       <UIDivider class="mt-0" />
 
       <section class="flex flex-col justify-center space-y-8">
-        <h2 class="subtitle">Short about self</h2>
+        <h2 class="subtitle">Short video</h2>
         <img
           src="/images/preview.png"
           alt="Description of image"
@@ -71,7 +71,9 @@
       <section>
         <h2 class="subtitle">Efficient & Productivity</h2>
       </section>
+
+      <UIDivider />
     </div>
-    <BlockChatAI />
+    <WidgetChatAI />
   </div>
 </template>

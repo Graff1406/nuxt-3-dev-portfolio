@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, nextTick } from "vue";
 import { useId } from "vue";
 
 const userMessage = ref<string>("");
@@ -6,6 +7,9 @@ const messages = ref<{ role: "user" | "bot"; content: string; id: string }[]>(
   []
 );
 const messageContainer = ref<HTMLDivElement | null>(null);
+const microphoneActive = ref(false);
+const mediaStream = ref<MediaStream | null>(null);
+const messageInput = ref<HTMLInputElement | null>(null);
 
 const pushMessage = (message: string, role: "user" | "bot") => {
   messages.value.push({
@@ -32,6 +36,49 @@ const sendMessage = () => {
     );
   });
 };
+
+const toggleMicrophone = async (): Promise<void> => {
+  if (microphoneActive.value) {
+    // Stop all audio tracks to release the microphone
+    mediaStream.value?.getTracks().forEach((track) => track.stop());
+    mediaStream.value = null;
+    microphoneActive.value = false;
+    console.log("🎤 Microphone is deactivated.");
+    return;
+  }
+
+  try {
+    console.log("🔄 Requesting microphone access...");
+    const stream: MediaStream = await navigator.mediaDevices.getUserMedia({
+      audio: true,
+    });
+
+    mediaStream.value = stream;
+    microphoneActive.value = true;
+    console.log("🎤 Microphone is active!", stream);
+
+    // After microphone is activated, focus the input field
+    if (messageInput.value) {
+      messageInput.value.focus();
+    }
+  } catch (error: any) {
+    console.error("❌ Failed to access the microphone:", error);
+
+    if (error.name === "NotAllowedError") {
+      alert(
+        "Microphone access was denied. Please enable it in your browser settings."
+      );
+    } else if (error.name === "NotFoundError") {
+      alert("No microphone found. Please connect a microphone.");
+    } else {
+      alert(
+        "Could not access the microphone. Please check your browser settings."
+      );
+    }
+
+    microphoneActive.value = false;
+  }
+};
 </script>
 
 <template>
@@ -44,8 +91,8 @@ const sendMessage = () => {
     >
       <h3 class="text-4xl font-bold">My Alter Ego AI</h3>
       <p class="text-xl">
-        You can ask me anything in the chat about me as web developer and all
-        technologies around!
+        Ask me anything about my work as a web developer! I’ll reply with text,
+        code snippets, and video links showcasing my projects.
       </p>
       <div class="flex items-center">
         <UIDivider />
@@ -91,14 +138,26 @@ const sendMessage = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div class="flex items-center space-x-4">
         <input
-          placeholder="Ask me anything..."
+          ref="messageInput"
+          :placeholder="
+            microphoneActive ? 'Listening...' : 'Type your message...'
+          "
           type="text"
           class="rounded-xl w-full p-4 text-md border outline-none text-zinc-600"
           v-model="userMessage"
           @keyup.enter="sendMessage"
         />
+        <UIButton
+          @click="toggleMicrophone"
+          class="border-zinc-200"
+          :class="{ 'text-red-600': microphoneActive }"
+          invert
+          icon
+        >
+          <Icon name="mdi:microphone" size="2em" />
+        </UIButton>
       </div>
     </div>
   </div>
