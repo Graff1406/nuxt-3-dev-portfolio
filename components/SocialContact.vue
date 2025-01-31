@@ -10,9 +10,15 @@ const footerIcons: { link: string; name: string }[] = [
 </script>
 
 <template>
-  <ul class="flex justify-between gap-3 pt-1.5">
+  <ul aria-label="Social media links" class="flex justify-between gap-3 pt-1.5">
     <li v-for="(icon, index) in footerIcons" :key="index" class="rounded-full">
-      <NuxtLink :to="icon.link" target="_blank" external>
+      <NuxtLink
+        :to="icon.link"
+        target="_blank"
+        rel="noopener noreferrer"
+        external
+        :aria-label="`Open ${icon.name} in a new tab`"
+      >
         <Icon
           :name="icon.name"
           size="2em"

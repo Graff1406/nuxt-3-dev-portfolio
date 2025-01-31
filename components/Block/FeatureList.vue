@@ -1,10 +1,12 @@
 <script setup lang="ts">
-const featureCards: {
+interface FeatureCard {
   title: string;
   description: string;
   icon: string;
   link: string;
-}[] = [
+}
+
+const featureCards: FeatureCard[] = [
   {
     title: "Components",
     description:
@@ -44,12 +46,18 @@ const featureCards: {
 </script>
 
 <template>
-  <div v-for="(card, index) in featureCards" :key="card.title">
+  <div
+    v-for="(card, index) in featureCards"
+    :key="card.title"
+    role="region"
+    :aria-labelledby="'card-title-' + index"
+  >
     <UIDivider v-if="index > 0" />
 
     <div class="flex-1 flex space-x-4 justify-between">
       <div class="flex-1 flex flex-col justify-center space-y-7">
         <h3
+          :id="'card-title-' + index"
           class="text-4xl font-bold text-center bg-gradient-to-r from-zinc-900 to-zinc-600 bg-clip-text text-transparent"
         >
           {{ card.title }}
@@ -58,7 +66,10 @@ const featureCards: {
           {{ card.description }}
         </p>
         <div class="flex justify-center">
-          <NuxtLink :to="card.link">
+          <NuxtLink
+            :to="card.link"
+            aria-label="See more about {{ card.title }}"
+          >
             <UIButton invert>
               <Icon name="material-symbols:arrow-forward-ios" />
               <span> See More </span>
@@ -71,6 +82,8 @@ const featureCards: {
           :name="card.icon"
           size="23em"
           class="bg-gradient-to-r from-pink-950 to-blue-950"
+          role="img"
+          :aria-label="card.title + ' icon'"
         />
       </div>
     </div>

@@ -14,6 +14,10 @@ const props = defineProps<Props>();
         ? 'bg-white text-black hover:bg-gray-100 '
         : 'bg-gradient-to-r from-zinc-950 to-zinc-700 text-white hover:bg-gray-800',
     ]"
+    :aria-pressed="props.invert ? 'true' : 'false'"
+    :aria-label="
+      props.invert ? 'Button in inverted mode' : 'Button in normal mode'
+    "
   >
     <slot></slot>
   </button>

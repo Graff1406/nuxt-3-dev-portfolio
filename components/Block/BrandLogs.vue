@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const brands: string[] = [
+const brandIcons: string[] = [
   "skill-icons:javascript",
   "skill-icons:typescript",
   "skill-icons:html",
@@ -43,16 +43,19 @@ const brands: string[] = [
 
 <template>
   <div class="space-y-12">
-    <ul class="flex flex-wrap items-center justify-center text-xl gap-4">
-      <li v-for="brand in brands" :key="brand">
-        <Icon :name="brand" size="3em" />
+    <ul
+      class="flex flex-wrap items-center justify-center text-xl gap-4"
+      role="list"
+    >
+      <li v-for="icon in brandIcons" :key="icon">
+        <Icon :name="icon" size="3em" :aria-label="icon" role="img" />
       </li>
     </ul>
 
     <div class="flex justify-center">
       <NuxtLink to="/">
         <UIButton invert>
-          <Icon name="material-symbols:arrow-forward-ios" />
+          <Icon name="material-symbols:arrow-forward-ios" aria-hidden="true" />
           <span> See More </span>
         </UIButton>
       </NuxtLink>

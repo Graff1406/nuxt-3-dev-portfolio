@@ -1,35 +1,4 @@
-<script setup lang="ts">
-const brandLogos: string[] = [
-  "skill-icons:javascript",
-  "skill-icons:html",
-  "skill-icons:css",
-  "skill-icons:vuejs-light",
-  "skill-icons:nuxtjs-light",
-  "skill-icons:pinia-light",
-  "skill-icons:vuetify-light",
-  "skill-icons:react-light",
-  "skill-icons:redux",
-  "logos:jira",
-  "skill-icons:nodejs-light",
-  "vscode-icons:file-type-firestore",
-  "skill-icons:graphql-light",
-  "vscode-icons:file-type-angular",
-  "skill-icons:tailwindcss-light",
-  "skill-icons:materialui-light",
-  "skill-icons:expressjs-light",
-  "skill-icons:netlify-light",
-  "skill-icons:figma-light",
-  "skill-icons:jest",
-  "skill-icons:linux-light",
-  "skill-icons:windows-light",
-  "skill-icons:git",
-  "skill-icons:notion-light",
-  "skill-icons:typescript",
-  "skill-icons:vscode-light",
-  "skill-icons:vite-light",
-  "skill-icons:webpack-light",
-];
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="flex flex-col items-center py-4 space-y-4">
@@ -37,13 +6,13 @@ const brandLogos: string[] = [
       <!-- Start -->
       <div class="h-[calc(100vh-82px)] flex items-center justify-center">
         <div class="flex flex-col space-y-14 items-center">
-          <p class="text-6xl font-bold uppercase leading-tight flex flex-col">
+          <h1 class="text-6xl font-bold uppercase leading-tight flex flex-col">
             <span class="text-gradient">Product-Driven</span>
             <span
               class="bg-gradient-to-r from-zinc-900 to-zinc-500 bg-clip-text text-transparent"
               >Web Developer</span
             >
-          </p>
+          </h1>
           <p class="text-2xl">
             I am a full-stack web developer with 5 years of experience, focused
             on building high-performance, secure, and user-centric digital
@@ -54,8 +23,12 @@ const brandLogos: string[] = [
             solutions.
           </p>
           <div class="flex items-center gap-6">
-            <UIButton invert>
-              <Icon name="material-symbols:download" size="1.3em" />
+            <UIButton invert aria-label="Download CV">
+              <Icon
+                name="material-symbols:download"
+                size="1.3em"
+                aria-hidden="true"
+              />
               <span> Download CV </span>
             </UIButton>
 
