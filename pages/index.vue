@@ -55,7 +55,7 @@ const brandLogos: string[] = [
           </p>
           <div class="flex items-center gap-6">
             <UIButton invert>
-              <Icon name="material-symbols:download" size="2em" />
+              <Icon name="material-symbols:download" size="1.3em" />
               <span> Download CV </span>
             </UIButton>
 

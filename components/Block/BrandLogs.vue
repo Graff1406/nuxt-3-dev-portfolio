@@ -42,9 +42,20 @@ const brands: string[] = [
 </script>
 
 <template>
-  <ul class="flex flex-wrap items-center text-xl gap-4">
-    <li v-for="brand in brands" :key="brand">
-      <Icon :name="brand" size="3em" />
-    </li>
-  </ul>
+  <div class="space-y-12">
+    <ul class="flex flex-wrap items-center justify-center text-xl gap-4">
+      <li v-for="brand in brands" :key="brand">
+        <Icon :name="brand" size="3em" />
+      </li>
+    </ul>
+
+    <div class="flex justify-center">
+      <NuxtLink to="/">
+        <UIButton invert>
+          <Icon name="material-symbols:arrow-forward-ios" />
+          <span> See More </span>
+        </UIButton>
+      </NuxtLink>
+    </div>
+  </div>
 </template>
