@@ -1,56 +1,111 @@
-## Setup
+# 🚀 Project Name: Product-Driven Web Developer
 
-Make sure to install dependencies:
+## 🛠️ Setup
+
+Make sure to install dependencies before running the project:
 
 ```bash
-# npm
+# Install dependencies
 npm install
 ```
 
-## Development Server
+## 🌍 Development Server
 
-Start the development server on `http://localhost:3000`:
+Start the development server at `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
 ```
 
-## Production
+## 🚀 Production
 
-Build the application for production:
+To build the application for production:
 
 ```bash
-# npm
 npm run build
 ```
 
-Locally preview production build:
+To preview the production build locally:
 
 ```bash
-# npm
 npm run preview
 ```
 
-### Blocks
-- **Purpose**: Block components are responsible for static layout and presentation. They are typically used to encapsulate HTML structure without requiring props or interaction with the state.
-- **Characteristics**: 
-  - Contain purely visual elements (e.g., static text, images, sections).
-  - Do not accept props and do not have interactivity.
-  - Used for structural or presentational parts of the UI.
-- **Example**: 
-  - `Block/Header.vue`: A static header block.
-  - `Block/Footer.vue`: A static footer block.
-  - `Block/Section.vue`: A reusable section layout.
+For deploying to a server, check your deployment configuration.
 
-### Widgets
-- **Purpose**: Widget components are more dynamic and interactive. They often accept props, manage state, and perform specific actions (e.g., handling events, fetching data).
-- **Characteristics**: 
-  - Accept props to make them configurable and reusable.
-  - Have some level of interactivity or business logic (e.g., buttons, forms, toggles).
-  - Typically designed to encapsulate functionality or features.
-- **Example**: 
-  - `Widget/SearchWidget.vue`: A search bar that accepts search query input and performs an action.
-  - `Widget/NotificationWidget.vue`: A notification widget that displays dynamic alerts or messages.
-  - `Widget/DatePickerWidget.vue`: A date picker component for selecting dates.
+## 🔄 Managing Dependencies
+
+To update dependencies to the latest versions:
+
+```bash
+npm update
+```
+
+## 🏗️ Component Structure
+
+### 🔹 Blocks
+
+- **Purpose**: Blocks are **static layout components** responsible for structure and presentation.  
+- **Characteristics**:  
+  - Contain only **visual elements** (static text, images, etc.).  
+  - Do **not** accept props or interact with state.  
+  - Used for **layout and structural parts** of the UI.  
+- **Examples**:  
+  - `Block/Header.vue` → Static page header.  
+  - `Block/Footer.vue` → Static footer section.  
+  - `Block/Section.vue` → Reusable section layout.  
+
+### 🔹 Widgets
+
+- **Purpose**: Widgets are **dynamic and interactive components** with logic.  
+- **Characteristics**:  
+  - Accept **props** to be reusable.  
+  - Have **some level of interactivity** (e.g., handling user input, fetching data).  
+  - Encapsulate **specific functionality**.  
+- **Examples**:  
+  - `Widget/SearchWidget.vue` → Search bar component.  
+  - `Widget/NotificationWidget.vue` → Displays alerts or messages.  
+  - `Widget/DatePickerWidget.vue` → Date selection component.  
+
+## 📝 Commit Message Guidelines  
+
+Maintaining a structured commit message format helps keep the Git history clear.  
+
+### 🔹 Commit Prefixes  
+
+- **`feat:`** → Add a new feature.  
+- **`fix:`** → Fix a bug.  
+- **`update:`** → Update non-functional aspects (e.g., docs, dependencies).  
+- **`refactor:`** → Improve code structure without changing behavior.  
+- **`style:`** → Adjust formatting (e.g., spaces, indentation).  
+- **`perf:`** → Improve performance.  
+- **`chore:`** → Maintenance tasks (e.g., CI/CD, build scripts).  
+- **`test:`** → Add or update tests.  
+
+### 🔹 Example Commit Messages  
+
+```bash
+git commit -m "feat: add dark mode toggle"
+git commit -m "fix: resolve login form validation issue"
+git commit -m "update: improve accessibility with ARIA attributes"
+git commit -m "refactor: simplify API response handling"
+git commit -m "style: fix indentation and remove extra spaces"
+git commit -m "perf: optimize image loading for faster page speed"
+git commit -m "chore: update dependencies and configure ESLint"
+git commit -m "test: add unit tests for authentication service"
+```
+
+---
+
+💡 **Tip**: Keep commit messages **short** but **descriptive**. A good rule of thumb is:  
+✅ `"fix: resolve login form validation issue"`  
+❌ `"fixed a bug that was happening sometimes when a user entered invalid credentials"`
+
+---
+
+### 🔗 Additional Notes  
+
+- **Ensure your commits follow a logical order** (e.g., refactor before adding new features).  
+- **Keep PRs small and focused** for better reviewability.  
+- **Use branches** (`feature/branch-name`, `fix/branch-name`) for cleaner workflows.  
 
