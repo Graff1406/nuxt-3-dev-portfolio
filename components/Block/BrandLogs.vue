@@ -33,7 +33,6 @@ const brandIcons: string[] = [
   "skill-icons:react-dark",
   "skill-icons:redux",
   "skill-icons:tailwindcss-dark",
-  "skill-icons:typescript-dark",
   "skill-icons:vuejs-dark",
   "skill-icons:webpack-dark",
   "skill-icons:vercel-dark",
@@ -45,11 +44,24 @@ const brandIcons: string[] = [
   <section class="space-y-12">
     <h2 class="subtitle">Tach Stack</h2>
     <ul
-      class="flex flex-wrap items-center justify-center text-xl gap-4"
+      class="flex flex-wrap items-center justify-center text-xl gap-2 lg:gap-4"
       role="list"
     >
       <li v-for="icon in brandIcons" :key="icon">
-        <Icon :name="icon" size="3em" :aria-label="icon" role="img" />
+        <Icon
+          :name="icon"
+          size="3em"
+          :aria-label="icon"
+          role="img"
+          class="hidden lg:block"
+        />
+        <Icon
+          :name="icon"
+          size="2em"
+          :aria-label="icon"
+          role="img"
+          class="block lg:hidden"
+        />
       </li>
     </ul>
 

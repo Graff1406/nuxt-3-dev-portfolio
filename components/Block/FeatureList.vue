@@ -46,8 +46,8 @@ const featureCards: FeatureCard[] = [
 </script>
 
 <template>
-  <section>
-    <h2 class="subtitle upp">Works</h2>
+  <section class="space-y-6 lg:space-y-12">
+    <h2 class="subtitle">Works</h2>
     <ul>
       <li
         v-for="(card, index) in featureCards"
@@ -57,12 +57,19 @@ const featureCards: FeatureCard[] = [
       >
         <UIDivider v-if="index > 0" />
 
-        <div class="flex-1 flex space-x-4 justify-between">
-          <div class="flex-1 flex flex-col justify-center space-y-7">
-            <h3 :id="'card-title-' + index" class="subtitle text-2xl">
+        <div
+          class="flex-1 flex flex-col-reverse lg:flex-row space-x-4 justify-between"
+        >
+          <div
+            class="flex-1 flex flex-col justify-center items-center space-y-7"
+          >
+            <h3
+              :id="'card-title-' + index"
+              class="subtitle text-xl lg:text-2xl"
+            >
               {{ card.title }}
             </h3>
-            <p class="text-lg">
+            <p class="text-center lg:text-lg">
               {{ card.description }}
             </p>
             <div class="flex justify-center">
@@ -77,11 +84,16 @@ const featureCards: FeatureCard[] = [
               </NuxtLink>
             </div>
           </div>
-          <div>
+          <div class="flex-none flex justify-center items-center">
             <Icon
               :name="card.icon"
-              size="23em"
-              class="bg-gradient-to-r from-pink-950 to-blue-950"
+              size="16em"
+              class="hidden lg:block bg-gradient-to-r from-pink-950 to-blue-950"
+            />
+            <Icon
+              :name="card.icon"
+              size="10em"
+              class="block lg:hidden bg-gradient-to-r from-pink-950 to-blue-950"
             />
           </div>
         </div>
