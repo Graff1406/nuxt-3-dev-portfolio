@@ -46,46 +46,46 @@ const featureCards: FeatureCard[] = [
 </script>
 
 <template>
-  <div
-    v-for="(card, index) in featureCards"
-    :key="card.title"
-    role="region"
-    :aria-labelledby="'card-title-' + index"
-  >
-    <UIDivider v-if="index > 0" />
+  <section>
+    <h2 class="subtitle upp">Works</h2>
+    <ul>
+      <li
+        v-for="(card, index) in featureCards"
+        :key="card.title"
+        role="region"
+        :aria-labelledby="'card-title-' + index"
+      >
+        <UIDivider v-if="index > 0" />
 
-    <div class="flex-1 flex space-x-4 justify-between">
-      <div class="flex-1 flex flex-col justify-center space-y-7">
-        <h3
-          :id="'card-title-' + index"
-          class="text-4xl font-bold text-center bg-gradient-to-r from-zinc-900 to-zinc-600 bg-clip-text text-transparent"
-        >
-          {{ card.title }}
-        </h3>
-        <p class="text-xl">
-          {{ card.description }}
-        </p>
-        <div class="flex justify-center">
-          <NuxtLink
-            :to="card.link"
-            aria-label="See more about {{ card.title }}"
-          >
-            <UIButton invert>
-              <Icon name="material-symbols:arrow-forward-ios" />
-              <span> See More </span>
-            </UIButton>
-          </NuxtLink>
+        <div class="flex-1 flex space-x-4 justify-between">
+          <div class="flex-1 flex flex-col justify-center space-y-7">
+            <h3 :id="'card-title-' + index" class="subtitle text-2xl">
+              {{ card.title }}
+            </h3>
+            <p class="text-lg">
+              {{ card.description }}
+            </p>
+            <div class="flex justify-center">
+              <NuxtLink
+                :to="card.link"
+                aria-label="See more about {{ card.title }}"
+              >
+                <UIButton invert>
+                  <Icon name="material-symbols:arrow-forward-ios" />
+                  <span> See More </span>
+                </UIButton>
+              </NuxtLink>
+            </div>
+          </div>
+          <div>
+            <Icon
+              :name="card.icon"
+              size="23em"
+              class="bg-gradient-to-r from-pink-950 to-blue-950"
+            />
+          </div>
         </div>
-      </div>
-      <div>
-        <Icon
-          :name="card.icon"
-          size="23em"
-          class="bg-gradient-to-r from-pink-950 to-blue-950"
-          role="img"
-          :aria-label="card.title + ' icon'"
-        />
-      </div>
-    </div>
-  </div>
+      </li>
+    </ul>
+  </section>
 </template>

@@ -1,11 +1,21 @@
 <script setup lang="ts">
-const footerIcons: { link: string; name: string }[] = [
-  { link: "https://github.com/Graff1406", name: "mdi:github" },
+const footerIcons: { link: string; name: string; label: string }[] = [
+  { link: "https://github.com/Graff1406", name: "mdi:github", label: "GitHub" },
   {
     link: "https://www.linkedin.com/in/avtandil-shainidze-714533196/",
     name: "mdi:linkedin",
+    label: "LinkedIn",
   },
-  { link: "https://t.me/avtan_sh", name: "ic:baseline-telegram" },
+  {
+    link: "mailto:shainidze@gmail.com",
+    name: "basil:gmail-solid",
+    label: "Gmail",
+  },
+  {
+    link: "https://t.me/avtan_sh",
+    name: "ic:baseline-telegram",
+    label: "Telegram",
+  },
 ];
 </script>
 
@@ -17,12 +27,13 @@ const footerIcons: { link: string; name: string }[] = [
         target="_blank"
         rel="noopener noreferrer"
         external
-        :aria-label="`Open ${icon.name} in a new tab`"
+        :aria-label="`Open ${icon.label} in a new tab`"
       >
         <Icon
           :name="icon.name"
           size="2em"
           class="hover:text-blue-800 transition-all duration-300"
+          :title="icon.label"
         />
       </NuxtLink>
     </li>

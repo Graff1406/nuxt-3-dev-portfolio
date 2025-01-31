@@ -42,7 +42,8 @@ const brandIcons: string[] = [
 </script>
 
 <template>
-  <div class="space-y-12">
+  <section class="space-y-12">
+    <h2 class="subtitle">Tach Stack</h2>
     <ul
       class="flex flex-wrap items-center justify-center text-xl gap-4"
       role="list"
@@ -60,5 +61,5 @@ const brandIcons: string[] = [
         </UIButton>
       </NuxtLink>
     </div>
-  </div>
+  </section>
 </template>
