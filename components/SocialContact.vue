@@ -36,8 +36,10 @@ const footerIcons: { link: string; name: string; label: string }[] = [
           :name="icon.name"
           size="2em"
           class="hover:text-blue-800 transition-all duration-300"
+          :aria-hidden="true"
           :title="icon.label"
         />
+        <span class="sr-only">{{ icon.label }}</span>
       </NuxtLink>
     </li>
   </ul>

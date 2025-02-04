@@ -41,32 +41,35 @@ const brandIcons: string[] = [
 </script>
 
 <template>
-  <section class="space-y-12">
-    <h2 class="subtitle">Tach Stack</h2>
+  <section class="space-y-12" aria-labelledby="tech-stack-title">
+    <h2 id="tech-stack-title" class="subtitle">Tach Stack</h2>
     <ul
       class="flex flex-wrap items-center justify-center text-xl gap-2 lg:gap-4"
       role="list"
+      aria-label="List of technology stack icons"
     >
       <li v-for="icon in brandIcons" :key="icon">
         <Icon
           :name="icon"
           size="3em"
-          :aria-label="icon"
+          :aria-label="`${icon} icon`"
           role="img"
           class="hidden lg:block"
+          focusable="false"
         />
         <Icon
           :name="icon"
           size="2em"
-          :aria-label="icon"
+          :aria-label="`${icon} icon`"
           role="img"
           class="block lg:hidden"
+          focusable="false"
         />
       </li>
     </ul>
 
     <div class="flex justify-center">
-      <NuxtLink to="/">
+      <NuxtLink to="/" aria-label="Go to home page to see more">
         <UIButton invert>
           <Icon name="material-symbols:arrow-forward-ios" aria-hidden="true" />
           <span> See More </span>

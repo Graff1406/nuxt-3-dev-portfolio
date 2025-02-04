@@ -94,8 +94,11 @@ const toggleMicrophone = async (): Promise<void> => {
           : 'lg:max-w-80 p-4',
         isChatActive ? 'hidden' : 'flex',
       ]"
+      aria-labelledby="chat-description"
     >
-      <h3 class="text-3xl lg:text-4xl font-bold">My Alter Ego AI</h3>
+      <h3 id="chat-description" class="text-3xl lg:text-4xl font-bold">
+        My Alter Ego AI
+      </h3>
       <p class="text-md lg:text-xl">
         Ask me anything about my work as a web developer! I’ll reply with text,
         code snippets, and video links showcasing my projects.
@@ -109,7 +112,7 @@ const toggleMicrophone = async (): Promise<void> => {
           <p class="mx-2 font-bold uppercase text-sm">Contacts</p>
           <UIDivider />
         </div>
-        <SocialContact class="justify-evenly" />
+        <SocialContact class="justify-evenly" aria-label="Social media links" />
       </div>
 
       <!-- Start Chat Button -->
@@ -121,8 +124,9 @@ const toggleMicrophone = async (): Promise<void> => {
           @click="isChatActive = !isChatActive"
           invert
           class="w-full flex justify-center"
+          aria-label="Start chat with AI"
         >
-          <Icon name="mdi:chat" size="2em" />
+          <Icon name="mdi:chat" size="2em" aria-hidden="true" />
           <span>Start Chat AI</span>
         </UIButton>
       </div>
@@ -133,6 +137,7 @@ const toggleMicrophone = async (): Promise<void> => {
     <div
       class="flex-1 space-y-4 rounded-xl p-4"
       :class="[isChatActive ? 'block ' : 'hidden lg:flex lg:flex-col']"
+      aria-labelledby="chat-heading"
     >
       <div
         ref="messageContainer"
@@ -140,6 +145,8 @@ const toggleMicrophone = async (): Promise<void> => {
         :class="{
           'h-[calc(100vh-240px)] lg:h-[calc(100vh-280px)]': isChatActive,
         }"
+        role="log"
+        aria-live="polite"
       >
         <ul v-if="messages.length > 0" class="flex-1 h-full space-y-2">
           <li
@@ -154,6 +161,7 @@ const toggleMicrophone = async (): Promise<void> => {
                   : 'fluent:bot-sparkle-28-regular'
               "
               size="1.5em"
+              aria-hidden="true"
             />
             <span
               :class="[
@@ -169,7 +177,11 @@ const toggleMicrophone = async (): Promise<void> => {
           v-else
           class="flex-none flex items-center justify-center space-x-4 h-full"
         >
-          <Icon name="fluent:bot-sparkle-28-regular" size="8em" />
+          <Icon
+            name="fluent:bot-sparkle-28-regular"
+            size="8em"
+            aria-hidden="true"
+          />
           <div class="flex flex-col space-y-2">
             <p class="text-xl font-bold">Hi, I'm Avtandil Alter Ego AI.</p>
             <p>How can I help you?</p>
@@ -186,6 +198,7 @@ const toggleMicrophone = async (): Promise<void> => {
           class="rounded-xl w-full px-3 py-2 lg:p-4 text-sm lg:text-md border outline-none text-zinc-600"
           v-model="userMessage"
           @keyup.enter="sendMessage"
+          aria-label="Type your message"
         />
         <UIButton
           @click="toggleMicrophone"
@@ -193,8 +206,15 @@ const toggleMicrophone = async (): Promise<void> => {
           :class="{ 'text-red-600': microphoneActive }"
           invert
           icon
+          :aria-label="
+            microphoneActive ? 'Stop microphone' : 'Start microphone'
+          "
         >
-          <Icon name="mdi:microphone" class="text-2xl lg:text-4xl m-1 lg:m-2" />
+          <Icon
+            name="mdi:microphone"
+            class="text-2xl lg:text-4xl m-1 lg:m-2"
+            aria-hidden="true"
+          />
         </UIButton>
       </div>
     </div>

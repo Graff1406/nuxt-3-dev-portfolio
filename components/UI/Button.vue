@@ -5,6 +5,10 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+const handleClick = () => {
+  console.log("Button clicked");
+};
 </script>
 
 <template>
@@ -20,6 +24,9 @@ const props = defineProps<Props>();
     :aria-label="
       props.invert ? 'Button in inverted mode' : 'Button in normal mode'
     "
+    @click="handleClick"
+    role="button"
+    tabindex="0"
   >
     <slot></slot>
   </button>

@@ -46,16 +46,16 @@ const featureCards: FeatureCard[] = [
 </script>
 
 <template>
-  <section class="space-y-6 lg:space-y-12">
-    <h2 class="subtitle">Works</h2>
-    <ul>
+  <section class="space-y-6 lg:space-y-12" aria-labelledby="works-title">
+    <h2 id="works-title" class="subtitle">Works</h2>
+    <ul role="list">
       <li
         v-for="(card, index) in featureCards"
         :key="card.title"
-        role="region"
+        role="listitem"
         :aria-labelledby="'card-title-' + index"
       >
-        <UIDivider v-if="index > 0" />
+        <UIDivider v-if="index > 0" aria-hidden="true" />
 
         <div
           class="flex-1 flex flex-col-reverse lg:flex-row space-x-4 justify-between"
@@ -75,10 +75,13 @@ const featureCards: FeatureCard[] = [
             <div class="flex justify-center">
               <NuxtLink
                 :to="card.link"
-                aria-label="See more about {{ card.title }}"
+                :aria-label="`See more about ${card.title}`"
               >
                 <UIButton invert>
-                  <Icon name="material-symbols:arrow-forward-ios" />
+                  <Icon
+                    name="material-symbols:arrow-forward-ios"
+                    aria-hidden="true"
+                  />
                   <span> See More </span>
                 </UIButton>
               </NuxtLink>
@@ -89,11 +92,17 @@ const featureCards: FeatureCard[] = [
               :name="card.icon"
               size="16em"
               class="hidden lg:block bg-gradient-to-r from-pink-950 to-blue-950"
+              :aria-label="`${card.title} icon`"
+              role="img"
+              focusable="false"
             />
             <Icon
               :name="card.icon"
               size="10em"
               class="block lg:hidden bg-gradient-to-r from-pink-950 to-blue-950"
+              :aria-label="`${card.title} icon`"
+              role="img"
+              focusable="false"
             />
           </div>
         </div>

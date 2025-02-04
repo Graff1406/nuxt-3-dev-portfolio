@@ -59,7 +59,7 @@ const currentYear = new Date().getFullYear();
             >© 2018 - {{ currentYear }} Web Developer</span
           >
         </p>
-        <SocialContact />
+        <SocialContact aria-label="Social media links" />
       </footer>
     </div>
   </div>

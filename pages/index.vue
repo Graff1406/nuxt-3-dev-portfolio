@@ -1,13 +1,13 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="flex flex-col items-center p-2 lg:px-0 space-y-4">
+  <main class="flex flex-col items-center p-2 lg:px-0 space-y-4">
     <div class="lg:max-w-[80%] flex-1">
       <section
         class="h-[calc(100vh-59px)] lg:h-[calc(100vh-82px)] flex items-center justify-center"
+        aria-labelledby="main-heading"
       >
         <div class="flex flex-col space-y-8 lg:space-y-14 items-center">
           <h1
+            id="main-heading"
             class="text-[40px] lg:text-6xl font-bold uppercase leading-tight flex flex-col items-center"
           >
             <span class="text-gradient">Product-Driven</span>
@@ -39,9 +39,17 @@
 
       <UIDivider class="mt-0" />
 
-      <section class="flex flex-col justify-center space-y-4 lg:space-y-8">
-        <h2 class="subtitle">Short video</h2>
-        <NuxtImg src="images/preview.webp" />
+      <section
+        class="flex flex-col justify-center space-y-4 lg:space-y-8"
+        aria-labelledby="video-heading"
+      >
+        <h2 id="video-heading" class="subtitle">Short video</h2>
+        <NuxtImg
+          src="images/preview.webp"
+          width="1280"
+          height="800"
+          alt="Preview of a short video"
+        />
       </section>
 
       <UIDivider />
@@ -52,8 +60,8 @@
 
       <UIDivider />
 
-      <section>
-        <h2 class="subtitle">Product-Driven</h2>
+      <section aria-labelledby="product-driven-heading">
+        <h2 id="product-driven-heading" class="subtitle">Product-Driven</h2>
       </section>
 
       <UIDivider />
@@ -62,12 +70,14 @@
 
       <UIDivider />
 
-      <section>
-        <h2 class="subtitle">Efficient & Productivity</h2>
+      <section aria-labelledby="efficient-heading">
+        <h2 id="efficient-heading" class="subtitle">
+          Efficient & Productivity
+        </h2>
       </section>
 
       <UIDivider />
     </div>
     <WidgetChatAI />
-  </div>
+  </main>
 </template>
