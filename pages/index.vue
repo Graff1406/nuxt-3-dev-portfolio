@@ -47,16 +47,14 @@
           <h2>Short video</h2>
         </UIDividerWithTitle>
 
-        <ClientOnly>
-          <NuxtImg
-            src="images/preview.webp"
-            width="1280"
-            height="800"
-            alt="Preview of a short video"
-            loading="lazy"
-            format="webp"
-          />
-        </ClientOnly>
+        <NuxtImg
+          src="images/preview.webp"
+          width="1280"
+          height="800"
+          alt="Preview of a short video"
+          loading="lazy"
+          format="webp"
+        />
       </section>
 
       <BlockBrandLogs />

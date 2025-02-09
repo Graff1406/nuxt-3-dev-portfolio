@@ -83,9 +83,7 @@ const products = [
             class="overflow-hidden rounded-lg min-w-[320px] max-w-[320px]"
             loading="lazy"
           >
-            <ClientOnly>
-              <NuxtImg :src="img" alt="security" loading="lazy" format="webp" />
-            </ClientOnly>
+            <NuxtImg :src="img" alt="security" loading="lazy" format="webp" />
           </div>
         </template>
 
