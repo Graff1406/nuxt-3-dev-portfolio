@@ -47,9 +47,9 @@ const featureCards: FeatureCard[] = [
 
 <template>
   <section class="space-y-6 lg:space-y-12" aria-labelledby="works-title">
-    <BlockTitleWithDivider>
-      <h2 class="subtitle">Works</h2>
-    </BlockTitleWithDivider>
+    <UIDividerWithTitle>
+      <h2>Works</h2>
+    </UIDividerWithTitle>
 
     <ul role="list">
       <li
@@ -68,7 +68,7 @@ const featureCards: FeatureCard[] = [
           >
             <h3
               :id="'card-title-' + index"
-              class="subtitle text-xl lg:text-2xl"
+              class="subtitle text-center text-xl lg:text-2xl"
             >
               {{ card.title }}
             </h3>

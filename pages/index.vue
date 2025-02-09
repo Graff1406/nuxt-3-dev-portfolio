@@ -9,7 +9,7 @@
           <h1
             class="text-[40px] lg:text-6xl font-bold uppercase leading-tight flex flex-col items-center"
           >
-            <span class="text-gradient">Product-Driven</span>
+            <span class="text-gradient">Product & User-Driven</span>
             <span
               class="bg-gradient-to-r from-zinc-900 to-zinc-500 bg-clip-text text-transparent"
               >Web Developer</span
@@ -43,40 +43,33 @@
         class="flex flex-col justify-center space-y-4 lg:space-y-8"
         aria-labelledby="video-heading"
       >
-        <BlockTitleWithDivider>
-          <h2 class="subtitle">Short video</h2>
-        </BlockTitleWithDivider>
+        <UIDividerWithTitle>
+          <h2>Short video</h2>
+        </UIDividerWithTitle>
 
-        <NuxtImg
-          src="images/preview.webp"
-          width="1280"
-          height="800"
-          alt="Preview of a short video"
-        />
+        <ClientOnly>
+          <NuxtImg
+            src="images/preview.webp"
+            width="1280"
+            height="800"
+            alt="Preview of a short video"
+            loading="lazy"
+            format="webp"
+          />
+        </ClientOnly>
       </section>
 
       <BlockBrandLogs />
 
-      <section aria-labelledby="product-driven-heading">
-        <BlockTitleWithDivider>
-          <h2 class="subtitle">Product-Driven</h2>
-        </BlockTitleWithDivider>
-        <p class="text-center">
-          Build a modular, flexible UI that grows effortlessly. Use reusable
-          components, responsive design, lazy loading, and efficient API
-          handling. Integrate automated testing and CI/CD to catch issues early,
-          ensuring that adding new features or handling increased load doesn’t
-          compromise performance.
-        </p>
+      <BlockProductDriven />
+
+      <section aria-labelledby="efficient-heading">
+        <UIDividerWithTitle>
+          <h2>Efficient & Productivity</h2>
+        </UIDividerWithTitle>
       </section>
 
       <BlockFeatureList />
-
-      <section aria-labelledby="efficient-heading">
-        <BlockTitleWithDivider>
-          <h2 class="subtitle">Efficient & Productivity</h2>
-        </BlockTitleWithDivider>
-      </section>
     </div>
     <WidgetChatAI />
   </main>
