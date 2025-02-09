@@ -47,7 +47,10 @@ const featureCards: FeatureCard[] = [
 
 <template>
   <section class="space-y-6 lg:space-y-12" aria-labelledby="works-title">
-    <h2 id="works-title" class="subtitle">Works</h2>
+    <BlockTitleWithDivider>
+      <h2 class="subtitle">Works</h2>
+    </BlockTitleWithDivider>
+
     <ul role="list">
       <li
         v-for="(card, index) in featureCards"
@@ -55,7 +58,7 @@ const featureCards: FeatureCard[] = [
         role="listitem"
         :aria-labelledby="'card-title-' + index"
       >
-        <UIDivider v-if="index > 0" aria-hidden="true" />
+        <div v-if="index > 0" aria-hidden="true" class="divider"></div>
 
         <div
           class="flex-1 flex flex-col-reverse lg:flex-row space-x-4 justify-between"

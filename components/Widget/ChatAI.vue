@@ -108,9 +108,10 @@ const toggleMicrophone = async (): Promise<void> => {
 
       <div class="hidden lg:block items-center">
         <div class="flex items-center mx-2">
-          <UIDivider />
+          <div class="divider"></div>
+
           <p class="mx-2 font-bold uppercase text-sm">Contacts</p>
-          <UIDivider />
+          <div class="divider"></div>
         </div>
         <SocialContact class="justify-evenly" aria-label="Social media links" />
       </div>
@@ -118,7 +119,7 @@ const toggleMicrophone = async (): Promise<void> => {
       <!-- Start Chat Button -->
 
       <div class="lg:hidden">
-        <UIDivider />
+        <div class="divider"></div>
 
         <UIButton
           @click="isChatActive = !isChatActive"

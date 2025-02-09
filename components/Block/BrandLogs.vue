@@ -42,7 +42,9 @@ const brandIcons: string[] = [
 
 <template>
   <section class="space-y-12" aria-labelledby="tech-stack-title">
-    <h2 id="tech-stack-title" class="subtitle">Tach Stack</h2>
+    <BlockTitleWithDivider>
+      <h2 class="subtitle">Tach Stack</h2>
+    </BlockTitleWithDivider>
     <ul
       class="flex flex-wrap items-center justify-center text-xl gap-2 lg:gap-4"
       role="list"
