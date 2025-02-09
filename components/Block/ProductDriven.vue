@@ -6,7 +6,7 @@ const products = [
     description:
       "Build a modular, flexible UI that grows effortlessly. Use reusable components, responsive design, lazy loading, and efficient API handling. Integrate automated testing and CI/CD to catch issues early, ensuring that adding new features or handling increased load doesn’t compromise performance.",
     img: "images/block/prod-driven/security_320.webp",
-    link: "/products",
+    link: "/",
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const products = [
     description:
       "ЕBuild a modular, flexible UI that grows effortlessly. Use reusable components, responsive design, lazy loading, and efficient API handling. Integrate automated testing and CI/CD to catch issues early, ensuring that adding new features or handling increased load doesn’t compromise performance.",
     img: "images/block/prod-driven/Performance_320.webp",
-    link: "/products",
+    link: "/",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const products = [
     description:
       "The frontend may look beautiful, but if it crashes, freezes, or is unstable, the user will simply leave. Reliability means that the product always works, predictably, and without failures.",
     img: "images/block/prod-driven/reliability_320.webp",
-    link: "/products",
+    link: "/",
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ const products = [
     description:
       "Predictability is about the behavior of the system (how it reacts to user actions). Predictability is important for user convenience and interface predictability, as well as stable and expected system behavior, interface uniformity and error handling.",
     img: "images/block/prod-driven/predictability_320.webp",
-    link: "/products",
+    link: "/",
   },
   {
     id: 5,
@@ -38,7 +38,7 @@ const products = [
     description:
       "If a user cannot comfortably work with an application due to incompatibility with its environment, he will simply leave. Compatibility is not only cross-browser compatibility, but also adaptation to different operating systems, devices and screen resolutions.",
     img: "images/block/prod-driven/compatibility_320.webp",
-    link: "/products",
+    link: "/",
   },
   {
     id: 6,
@@ -46,7 +46,7 @@ const products = [
     description:
       "Accessibility (A11Y) - the product must be convenient and functional for all users, including people with disabilities, providing equal access to content and functions.",
     img: "images/block/prod-driven/accessibility_320.webp",
-    link: "/products",
+    link: "/",
   },
 ];
 </script>
