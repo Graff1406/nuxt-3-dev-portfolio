@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <article class="flex space-x-3 lg:space-x-6">
+  <article class="flex gap-3 lg:gap-6">
     <slot name="lest-aside"> </slot>
     <div class="flex flex-col space-y-4 lg:space-y-6">
       <header>

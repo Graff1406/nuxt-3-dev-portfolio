@@ -69,7 +69,7 @@ const products = [
     >
       <div v-if="index > 0" class="divider"></div>
 
-      <UICard aria-label="View Projects">
+      <UICard aria-label="View Projects" class="flex-col-reverse lg:flex-row">
         <template #header>
           <h3 class="subtitle text-center text-xl lg:text-2xl">
             {{ title }}
@@ -80,10 +80,15 @@ const products = [
 
         <template #right-aside>
           <div
-            class="overflow-hidden rounded-lg min-w-[320px] max-w-[320px]"
-            loading="lazy"
+            class="rounded-lg w-full h-[180px] lg:min-w-[320px] lg:max-w-[320px] lg:h-[240px] overflow-hidden mb-6 lg:mb-0 border"
           >
-            <NuxtImg :src="img" alt="security" loading="lazy" format="webp" />
+            <NuxtImg
+              :src="img"
+              alt="security"
+              loading="lazy"
+              format="webp"
+              class="w-full h-full object-cover"
+            />
           </div>
         </template>
 
@@ -94,7 +99,6 @@ const products = [
                 <Icon
                   name="material-symbols:arrow-forward-ios"
                   aria-hidden="true"
-                  class=""
                 />
                 <span> See More </span>
               </UIButton>

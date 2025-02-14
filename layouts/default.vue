@@ -56,7 +56,8 @@ const currentYear = new Date().getFullYear();
         <p class="text-xl flex items-center space-x-4">
           <Icon name="skill-icons:htmx-dark" size="1.5em" aria-hidden="true" />
           <span class="text-sm lg:text-base"
-            >© 2018 - {{ currentYear }} Web Developer</span
+            >© 2018 - {{ currentYear }} | Product & User-Driven Web
+            Developer</span
           >
         </p>
         <SocialContact aria-label="Social media links" />
