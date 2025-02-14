@@ -86,7 +86,6 @@ const products = [
               :src="img"
               alt="security"
               loading="lazy"
-              format="webp"
               class="w-full h-full object-cover"
             />
           </div>

@@ -54,7 +54,7 @@ const features: FeatureCard[] = [
 <template>
   <section aria-labelledby="product-driven-heading">
     <UIDividerWithTitle>
-      <h2 class="">Dev Solutions & Tools</h2>
+      <h2 id="product-driven-heading" class="">Dev Solutions & Tools</h2>
     </UIDividerWithTitle>
     <p class="text-center mt-6 lg:mb-10 lg:text-lg">
       Explore a variety of development solutions, from reusable UI components
@@ -68,9 +68,15 @@ const features: FeatureCard[] = [
     >
       <div v-if="index > 0" class="divider"></div>
 
-      <UICard aria-label="View Projects" class="flex-col-reverse lg:flex-row">
+      <UICard
+        aria-labelledby="card-{{ id }}"
+        class="flex-col-reverse lg:flex-row"
+      >
         <template #header>
-          <h3 class="subtitle text-center text-xl lg:text-2xl">
+          <h3
+            id="card-{{ id }}"
+            class="subtitle text-center text-xl lg:text-2xl"
+          >
             {{ title }}
           </h3>
         </template>
@@ -83,9 +89,8 @@ const features: FeatureCard[] = [
           >
             <NuxtImg
               :src="img"
-              alt="security"
+              :alt="`Image for ${title}`"
               loading="lazy"
-              format="webp"
               class="w-full h-full object-cover"
             />
           </div>
@@ -94,7 +99,7 @@ const features: FeatureCard[] = [
         <template #footer>
           <div class="flex justify-center">
             <NuxtLink :to="link">
-              <UIButton invert>
+              <UIButton aria-label="See more projects in {{ title }}" invert>
                 <Icon
                   name="material-symbols:arrow-forward-ios"
                   aria-hidden="true"
