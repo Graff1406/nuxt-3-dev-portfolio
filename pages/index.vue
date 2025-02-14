@@ -7,7 +7,7 @@
       >
         <div class="flex flex-col space-y-8 lg:space-y-14 items-center">
           <h1
-            class="text-[40px] lg:text-6xl font-bold uppercase leading-tight flex flex-col items-center"
+            class="text-[40px] lg:text-6xl text-center font-bold uppercase leading-tight flex flex-col items-center"
           >
             <span class="text-gradient">Product & User-Driven</span>
             <span
